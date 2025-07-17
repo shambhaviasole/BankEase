@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Report</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05);
+}
+
+h1.text-center {
+  color: #004e92;
+  font-weight: 600;
+}
+
+.table {
+  background-color: #ffffff;
+  margin-top: 20px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table th {
+  background-color: #343a40;
+  color: #ffffff;
+  border: none;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f2f6fc;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.table-responsive {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  h1.text-center {
+    font-size: 1.5rem;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Employee Report</h1>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Number</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Post</th>
+                        <th>Location</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for rec in empdata %}
+                    <tr>
+                        {%for col in rec %}
+                        <td>{{col}}</td>
+                        {%endfor%}
+
+                    </tr>
+                    {% endfor %}
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
